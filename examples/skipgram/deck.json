@@ -1,0 +1,5 @@
+{
+  "name": "skipgram",
+  "title": "Skip Gram Models",
+  "python": { "packages": ["numpy"] }
+}

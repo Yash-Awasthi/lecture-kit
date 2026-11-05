@@ -1,0 +1,7 @@
+{
+  "name": "deck",
+  "title": "Deck title",
+  "python": { "packages": ["numpy"] },
+  "keys": {},
+  "controls": {}
+}

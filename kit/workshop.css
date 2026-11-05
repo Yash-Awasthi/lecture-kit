@@ -1,0 +1,83 @@
+#workshop { min-height: 100vh; background: #fff; color: #1d1d1f; font: 15px/1.6 Inter, system-ui, sans-serif; }
+.ws-top { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 18px; padding: 12px 28px; background: rgba(255, 255, 255, .92); backdrop-filter: blur(8px); border-bottom: 1px solid #eceef1; }
+.ws-title { font-family: KaTeX_Main, serif; font-size: 26px; flex: 1; }
+.ws-title span { font-family: Inter, sans-serif; font-size: 14px; color: #7d838c; margin-left: 12px; }
+.ws-actions { display: flex; align-items: center; gap: 10px; }
+.ws-btn { display: inline-flex; align-items: center; gap: 8px; height: 32px; padding: 0 14px; border-radius: 8px; border: 1px solid #1f6fb2; background: #1f6fb2; color: #fff; font: 500 13px Inter, sans-serif; cursor: pointer; }
+.ws-btn:hover { filter: brightness(1.08); }
+.ws-btn.ghost { background: #fff; color: #1f6fb2; border-color: #cfdcea; }
+.ws-btn.danger { background: #fff; color: #d1435b; border-color: #f0c5cd; }
+.ws-btn kbd { font: 500 11px Inter, sans-serif; opacity: .75; }
+.ws-status { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: #7d838c; margin-right: 6px; }
+.ws-status i { width: 9px; height: 9px; border-radius: 50%; background: #c9cdd3; }
+.ws-status.busy i { background: #e0a800; animation: blink 1s infinite; }
+.ws-status.ok i { background: #2e9b4f; }
+.ws-status.bad i { background: #d1435b; }
+.ws-status.bad b { color: #d1435b; }
+.ws-status b { font-weight: 500; }
+@keyframes blink { 50% { opacity: .3 } }
+
+.ws-body { display: grid; grid-template-columns: 300px minmax(0, 1fr); gap: 28px; padding: 24px 28px 80px; max-width: 1500px; margin: 0 auto; }
+.ws-side { position: sticky; top: 76px; align-self: start; display: flex; flex-direction: column; gap: 16px; max-height: calc(100vh - 96px); overflow: auto; }
+.ws-card { border: 1px solid #eceef1; border-radius: 12px; padding: 14px 16px; }
+.ws-h { font-weight: 600; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: #7d838c; margin-bottom: 10px; }
+.ws-param { display: block; margin-bottom: 10px; font-size: 13px; }
+.ws-param span { display: flex; justify-content: space-between; color: #3b4048; }
+.ws-param em { font-style: normal; font-weight: 600; color: #1f6fb2; }
+.ws-param input[type=range] { width: 100%; accent-color: #1f6fb2; }
+.ws-param select { width: 100%; margin-top: 4px; height: 30px; border: 1px solid #dfe3e8; border-radius: 6px; font: 13px Inter, sans-serif; padding: 0 6px; }
+.ws-hint { font-size: 12px; color: #7d838c; line-height: 1.5; }
+.ws-toc { padding-left: 20px; font-size: 13px; }
+.ws-toc li { margin: 4px 0; }
+.ws-toc a { color: #2b2f36; text-decoration: none; }
+.ws-toc a:hover { color: #1f6fb2; }
+
+.ws-main { display: flex; flex-direction: column; gap: 22px; }
+.ws-cell { border: 1px solid #eceef1; border-radius: 14px; padding: 20px 22px; scroll-margin-top: 80px; transition: border-color .2s; }
+.ws-cell.running { border-color: #1f6fb2; box-shadow: 0 0 0 3px #e3eef9; }
+.ws-cell.err { border-color: #f0c5cd; }
+.ws-cell-h { display: flex; align-items: center; gap: 12px; margin-bottom: 6px; }
+.ws-cell-h h3 { font-family: KaTeX_Main, serif; font-weight: 400; font-size: 23px; flex: 1; }
+.ws-num { width: 28px; height: 28px; border-radius: 50%; background: #eef4fb; color: #1f6fb2; display: grid; place-items: center; font-weight: 600; font-size: 13px; }
+.ws-meta { font-size: 12px; color: #9aa0a8; }
+.ws-cell > p { color: #4a4f57; margin: 2px 0 12px; max-width: 900px; }
+.ws-cell code { font-family: 'JetBrains Mono', monospace; font-size: 13px; background: #f3f5f7; padding: 1px 5px; border-radius: 4px; }
+#ws-text { width: 100%; height: 190px; border: 1px solid #dfe3e8; border-radius: 10px; padding: 12px; font: 13px/1.55 'JetBrains Mono', monospace; resize: vertical; color: #2b2f36; }
+.ws-row { display: flex; align-items: center; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+.ws-time { font-size: 12px; color: #9aa0a8; }
+
+.ws-code .CodeMirror { font-variant-ligatures: none; height: auto; border: 1px solid #e3e7ec; border-radius: 10px; font: 13.5px/1.55 'JetBrains Mono', monospace; background: #fbfcfd; }
+.ws-code .CodeMirror-gutters { background: #f5f7f9; border-right: 1px solid #eceef1; border-radius: 10px 0 0 10px; }
+.ws-code .CodeMirror-linenumber { color: #b4b9c0; }
+.cm-s-default .cm-keyword { color: #7d4fb5; }
+.cm-s-default .cm-def { color: #1f6fb2; }
+.cm-s-default .cm-string { color: #2e9b4f; }
+.cm-s-default .cm-number { color: #e2711d; }
+.cm-s-default .cm-comment { color: #9aa0a8; font-style: italic; }
+.cm-s-default .cm-builtin { color: #0f9d8a; }
+.cm-s-default .cm-variable-2 { color: #1d1d1f; }
+
+.ws-out { display: none; margin-top: 12px; max-height: 300px; overflow: auto; background: #f7f8fa; border-radius: 10px; padding: 12px 14px; font: 12.5px/1.55 'JetBrains Mono', monospace; white-space: pre-wrap; color: #2b2f36; }
+.ws-out.on { display: block; }
+.ws-out .err { color: #d1435b; }
+.ws-viz:empty { display: none; }
+.ws-viz { margin-top: 14px; }
+.ws-legend { display: flex; gap: 16px; font-size: 12px; color: #4a4f57; margin-bottom: 4px; }
+.ws-legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.ws-table { border-collapse: collapse; width: 100%; font-size: 14px; }
+.ws-table th { text-align: left; font-weight: 600; border-bottom: 2px solid #1d1d1f; padding: 6px 10px; }
+.ws-table td { border-bottom: 1px solid #eceef1; padding: 6px 10px; color: #3b4048; }
+.ws-table td.q { font-weight: 600; color: #1f6fb2; }
+.ws-vh { font-size: 12px; color: #7d838c; margin-bottom: 4px; }
+.ws-3d { position: relative; height: 520px; margin-top: 14px; border: 1px solid #eceef1; border-radius: 10px; overflow: hidden; }
+.ws-viz { display: grid; grid-template-columns: repeat(auto-fit, minmax(420px, 1fr)); gap: 18px; }
+.ws-panel { min-width: 0; }
+.ws-svg { width: 100%; height: auto; border: 1px solid #eceef1; border-radius: 10px; background: #fff; }
+.ws-svg text { font: 11px Inter, sans-serif; fill: #6b717a; }
+.ws-svg text.hi { font-weight: 600; }
+.ws-scatter .pt { transition: transform .45s cubic-bezier(.4, 0, .2, 1); }
+.ws-scatter .pt text { font: 11.5px KaTeX_Main, serif; }
+.ws-img { max-width: 100%; border: 1px solid #eceef1; border-radius: 10px; }
+.ws-vh:empty { display: none; }
+.ws-panel[data-key="scatter3d"] { grid-column: 1 / -1; }
+.ws-code .CodeMirror pre.CodeMirror-line, .ws-code .CodeMirror pre.CodeMirror-line-like { font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0; }

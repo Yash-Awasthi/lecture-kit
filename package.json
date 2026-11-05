@@ -1,0 +1,24 @@
+{
+  "name": "lecture-kit",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Animated single-file HTML lecture decks with 3D, live Python workshops and presenter tools.",
+  "type": "module",
+  "scripts": {
+    "new": "node tools/new.mjs",
+    "build": "node build.mjs",
+    "check": "node tools/check.mjs",
+    "vendor": "node tools/vendor.mjs",
+    "pack-skill": "node tools/pack-skill.mjs",
+    "install-skill": "node tools/install-skill.mjs"
+  },
+  "devDependencies": {
+    "codemirror": "5.65.16",
+    "esbuild": "^0.28.2",
+    "katex": "0.16.11",
+    "puppeteer-core": "^25.16.0",
+    "pyodide": "0.26.4",
+    "qrcode-generator": "1.4.4",
+    "three": "0.169.0"
+  }
+}

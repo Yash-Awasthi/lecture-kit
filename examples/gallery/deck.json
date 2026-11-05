@@ -1,0 +1,7 @@
+{
+  "name": "gallery",
+  "title": "Building blocks gallery",
+  "python": { "packages": ["numpy", "scikit-learn", "matplotlib"] },
+  "keys": {},
+  "controls": { "autoHide": true }
+}
